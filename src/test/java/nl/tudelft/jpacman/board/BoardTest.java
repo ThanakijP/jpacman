@@ -11,7 +11,8 @@ public class BoardTest {
 
     @BeforeEach
     void setUp() {
-        Square[][] grid = {{new BasicSquare()}};
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = new BasicSquare();
         board = new Board(grid);
     }
 
@@ -23,7 +24,9 @@ public class BoardTest {
 
     @Test
     void testSquareAt() {
-        Square square = board.squareAt(0, 0);
-        assertNotNull(square);
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = null;
+        board = new Board(grid);
+        assertNull(board.squareAt(0, 0));
     }
 }
