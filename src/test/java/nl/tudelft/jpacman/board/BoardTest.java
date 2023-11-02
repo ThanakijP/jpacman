@@ -13,7 +13,7 @@ public class BoardTest {
     private Board board;
 
     /***
-     * Board.setUp
+     * Board.setUp.
      */
     @BeforeEach
     void setUp() {
@@ -23,7 +23,7 @@ public class BoardTest {
     }
 
     /***
-     * Board.testBoard
+     * Board.testBoard.
      */
     @Test
     void testBoard() {
