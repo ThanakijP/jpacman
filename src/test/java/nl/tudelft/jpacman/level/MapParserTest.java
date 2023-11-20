@@ -27,6 +27,8 @@ public class MapParserTest {
     private LevelFactory levelFactory;
     @Mock
     private Blinky blinky;
+    private static final int NUMBER_OF_WALLS = 26;
+    private static final int NUMBER_OF_GROUNDS = 10;
 
     /**
      * Initializes mockito mocks before each test.
@@ -54,8 +56,8 @@ public class MapParserTest {
 
         Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
 
-        Mockito.verify(boardFactory, Mockito.times(26)).createWall();
-        Mockito.verify(boardFactory, Mockito.times(10)).createGround();
+        Mockito.verify(boardFactory, Mockito.times(NUMBER_OF_WALLS)).createWall();
+        Mockito.verify(boardFactory, Mockito.times(NUMBER_OF_GROUNDS)).createGround();
     }
 
     /**
