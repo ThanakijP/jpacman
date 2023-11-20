@@ -4,6 +4,7 @@ import nl.tudelft.jpacman.PacmanConfigurationException;
 import nl.tudelft.jpacman.board.BoardFactory;
 import nl.tudelft.jpacman.npc.ghost.Blinky;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -26,6 +27,14 @@ public class MapParserTest {
     private LevelFactory levelFactory;
     @Mock
     private Blinky blinky;
+
+    /**
+     * Initializes mockito mocks before each test.
+     */
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
 
     /**
      * Test for the parseMap method (good map).
@@ -69,6 +78,4 @@ public class MapParserTest {
         String expectedMessage = "Input text lines are not of equal width.";
         Assertions.assertEquals(expectedMessage, thrown.getMessage());
     }
-
-
 }
