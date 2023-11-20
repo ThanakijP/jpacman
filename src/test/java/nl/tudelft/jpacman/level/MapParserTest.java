@@ -61,13 +61,13 @@ public class MapParserTest {
                 assertNotNull(levelFactory);
                 MapParser mapParser = new MapParser(levelFactory, boardFactory);
                 ArrayList<String> map = new ArrayList<>();
-                map.add("############");
-                map.add("#P        G#");
-                map.add("############");
+                map.add("########");
+                map.add("#P      G#");
+                map.add("######");
                 mapParser.parseMap(map);
             });
-        String exceptedMessage = "Input text lines are not of equal width.";
-        Assertions.assertEquals(exceptedMessage, thrown.getMessage());
+        String expectedMessage = "Input text lines are not of equal width.";
+        Assertions.assertEquals(expectedMessage, thrown.getMessage());
     }
 
 
